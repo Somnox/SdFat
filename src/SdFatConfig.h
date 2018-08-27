@@ -85,7 +85,7 @@
 #define ENABLE_SOFTWARE_SPI_CLASS 0
 //------------------------------------------------------------------------------
 /**
- * If CHECK_FLASH_PROGRAMMING is zero, overlap of single sector flash 
+ * If CHECK_FLASH_PROGRAMMING is zero, overlap of single sector flash
  * programming and other operations will be allowed for faster write
  * performance.
  *
@@ -180,7 +180,7 @@
 #endif  // RAMEND
 //-----------------------------------------------------------------------------
 /** Enable SDIO driver if available. */
-#if defined(__MK64FX512__) || defined(__MK66FX1M0__)
+#if defined(__MK64FX512__) || defined(__MK66FX1M0__) || defined(__STM32F1__)
 #define ENABLE_SDIO_CLASS 1
 #define ENABLE_SDIOEX_CLASS 1
 #else  // ENABLE_SDIO_CLASS
@@ -190,7 +190,7 @@
 /**
  * Determine the default SPI configuration.
  */
-#if defined(__STM32F1__) || defined(__STM32F4__) 
+#if defined(__STM32F1__) || defined(__STM32F4__)
 // has multiple SPI ports
 #define SD_HAS_CUSTOM_SPI 2
 #elif defined(__AVR__)\
