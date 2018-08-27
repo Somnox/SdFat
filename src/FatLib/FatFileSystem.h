@@ -45,7 +45,7 @@ class FatFileSystem : public  FatVolume {
    * \return The value true is returned for success and
    * the value false is returned for failure.
    */
-  bool begin(BlockDriver* blockDev, uint8_t part = 0) {
+  bool begin(BlockDriver* blockDev, uint8_t part = 2) {
     m_blockDev = blockDev;
     vwd()->close();
     return (part ? init(part) : init(1) || init(0))
